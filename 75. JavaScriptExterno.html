@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptExterno</title>
+      <style type="text/css">
+      #forma{
+          width: 200px;
+          height: 200px;
+          background-color: red;
+          position: relative;
+          top:100px;
+          left:200px;
+          
+      }
+
+      </style>
+</head>
+<body>
+    <h1>Comprueba tus reflejos</h1>
+    
+    <h2>Ha click en los circulos o rectangulos tan rápido como puedas!</h2>
+    
+    <p>Tiempo de reacción:<span id="tiempoReaccion"></span></p>
+    
+    <div id="forma"></div>
+    
+    <script type="text/javascript">
+    
+    var inicio =new Date().getTime()//Coger el inicio del tiempo
+    
+    function desaparecerFigura(){
+     document.getElementById("forma").style.display="none";
+     //desaperecer el identificador seleccionado
+    }
+    function obtenerColorAleatorio(){
+        var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++ ) {
+                    color += letters[Math.round(Math.random() * 15)];
+                }
+                return color;
+    }
+
+    function crearCirculo(){
+     if (Math.random()>0.5){
+     document.getElementById("forma").style.borderRadius="50%";
+     }else{
+     document.getElementById("forma").style.borderRadius="0%";
+     }
+    }
+    
+    function aparecerFigura(){
+
+     var size =Math.random()*200+50;
+     
+     var top=Math.random()*400; 
+     
+     var left=Math.random()*400;
+     crearCirculo();
+     //cambiar anchura
+     document.getElementById("forma").style.width=size+"px";
+     //cambiar altura
+     document.getElementById("forma").style.height=size+"px";
+     //cambiar posicion arriba
+     document.getElementById("forma").style.top=top+"px";
+     //cambiar posicion ala izquierda
+     document.getElementById("forma").style.left=left+"px";
+     //cambiar color
+     document.getElementById("forma").style.backgroundColor=obtenerColorAleatorio();
+     
+     document.getElementById("forma").style.display="block";
+     //aparecer el identificador seleccionado
+     inicio = new Date().getTime();
+ 
+    }
+    
+    function aparecerFiguraDespuesRetraso(){
+        setTimeout(aparecerFigura,Math.random()*2000);
+    //se correra la funcion aparecerFigura en un tiempo random de 2 segundos
+    }
+
+    //que pasara al darle click al elemento
+    document.getElementById("forma").onclick =
+    function(){
+       desaparecerFigura();
+       aparecerFiguraDespuesRetraso();
+       var fin = new Date().getTime()
+       var diferencia=(fin-inicio)/1000;
+       document.getElementById("tiempoReaccion").innerHTML=diferencia+" s";
+
+    }
+    </script>
+</body>
+</html>
