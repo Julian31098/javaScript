@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dime la palabra Magica</h1>
+    <input type="text" id="entradaUsuario" placeholder="Palabre Magica">
+    <button id="miBoton">Comprueba</button>
+    <script type="text/javascript">
+    /*
+     var hora=10;
+     var saludo="";
+     // si hora es menos a 13 hace esto
+     if(hora<13){
+         saludo="Buenos dias";
+     // si la hora es menor a 20
+     }else if(hora<20){
+         saludo="Buenas tardes"
+    // si la hora es mayor a 20
+     }else{
+         saludo="Buenas noches";
+     }
+     alert(saludo);
+    */
+    var palabra = document.getElementById("entradaUsuario").value;
+    document.getElementById("miBoton").onclick =
+    function(){
+        if (palabra =="abracadabra"){
+       alert ("palabra correcta");
+
+    }else{
+        alert("palabra incorrecta");
+    }
+    }
+   
+    </script>
+</body>
+</html>

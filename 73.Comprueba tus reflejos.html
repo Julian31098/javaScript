@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprueba tus reflejos</title>
+    <style type="text/css">
+        #forma {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Tiempo de reacción: <span id="tiempoReaccion"></span></p>
+    <div id="forma"></div>
+
+
+
+    <script type="text/javascript">
+
+        var inicio = new Date().getTime();//alcance global
+            //devuelve el valor numérico correspondiente a la hora para la fecha especificada según la hora universal.
+            // en milisegundos
+
+
+
+            function aparecerForma() {
+                //Para que la figura aparesca
+                document.getElementById("forma").style.display = "block"
+                inicio = new Date().getTime();
+            }
+
+
+
+            function aparecerFormaDespuesRetraso() {
+                setTimeout(aparecerForma, Math.random() * 2000);
+            }
+            //aparecerFormaDespuesRetraso();
+            document.getElementById("forma").onclick =
+                function () {
+                    //para que la figura desaparesca
+                    document.getElementById("forma").style.display = "none";
+
+                    var fin = new Date().getTime();// es para coger la fecha y el tiempo final
+                    var diferencia = (fin - inicio) / 1000;
+                   
+
+                    document.getElementById("tiempoReaccion").innerHTML = diferencia + "s";
+                    //setTimeout(aparecerForma,2000);//para que corra la funcion despues de 2 segundos 
+                    aparecerFormaDespuesRetraso();
+                }
+    </script>
+</body>
+
+</html>

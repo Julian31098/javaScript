@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <h1>¿Cuantos dedos tengo?</h1>
+ <input type="text"  id="numeroDedos" placeholder="Número">
+ <button id="miBoton">Comprueba</button>
+<body>
+ <script type="text/javascript">
+ document.getElementById("miBoton").onclick=
+ 
+ function(){
+ var numeroRandom=Math.floor ((Math.random()*6));
+ alert (numeroRandom);
+ //floor redondea el numero al numero menor
+ //Math random: Numero aleatorio de 0 a 6 excluyendo el 6 osea de 0 y 5.9999
+ var numeroDedos=document.getElementById("numeroDedos").value
+ if(numeroDedos==numeroRandom){
+    alert("verdadero");
+ }else{
+    alert("falso");
+ }
+ };
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <p id="texto">Hola mundo</p><!--Parrafo -->
+    <button id="miBoton">¡Cambiar el texto!</button>
+    <p id="texto2">Javascript es...</p>
+    <button id="miBoton2">¡Cambiar texto!</button>
+    <p id=vacio></p>
+    <button id="Crear parrafo">¡Crear parrafo!</button>
+    <p id="parrafoConEstilo">Texto con estilo</p>
+    <button id="botonModificarEstilo">Modifica el estilo</button>
+
+
+</body>
+<script type="text/javascript">
+    // selecciona el boton y lo que pasara al darle click
+    document.getElementById("miBoton").onclick=
+    function(){
+        document.getElementById("texto").innerHTML = "Hola julian";
+        /*Esta funcion modifica el texto de la etiqueta p*/
+        
+    }
+    //selecciona el segundo boton y lo que pasara al darle click
+    document.getElementById("miBoton2").onclick =
+    function(){ 
+        document.getElementById("texto2").innerHTML= document.getElementById("texto2").innerHTML +"increible";
+        //une o concatena el contenido del segunto texto 
+    }
+    //selecciona el tercer boton y lo que pasara al darle click
+    document.getElementById("Crear parrafo").onclick=
+    function(){
+        document.getElementById("vacio").innerHTML ="<h1>Bienvenido al mundo de Javascrip<h1>";
+    //Introduce texto desde 0
+    }
+    document.getElementById("botonModificarEstilo").onclick =
+    function(){
+    document.getElementById("parrafoConEstilo").style.color="red";
+    //para darle color al texto
+    document.getElementById("parrafoConEstilo").style.fontSize="50px";
+    // el atributo font-size  dentro de java script es fontSize no utiliza guiones  
+    document.getElementById("parrafoConEstilo").style.fontWeight="900";
+    
+    document.getElementById("parrafoConEstilo").style.display="none";
+    // Esta linea lo que hace es desaparecer el texto
+    }
+
+
+
+
+</script>
+</html>

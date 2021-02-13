@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprueva tus reflejos</title>
+     <style type="text/css">
+      #forma{
+          width: 200px;
+          height: 200px;
+          background-color: red;
+      }
+     </style>
+</head>
+   
+
+<body>
+<p>Tiempo de reacciòn:<span id="tiempoReaccion"></span></p>
+<div id="forma"></div>    
+
+
+<script type="text/javascript">
+ var inicio = new Date().getTime();
+
+function desaparecerFormar(){
+    document.getElementById("forma").style.display="none";
+}
+
+function aparecerForma(){
+    document.getElementById("forma").style.display="block";
+}
+
+function aparecerFormaDespuesRetraso(){
+    setTimeout(aparecerForma,Math.random()*2000);
+}
+
+document.getElementById("forma").onclick =
+function(){
+desaparecerFormar();
+aparecerFormaDespuesRetraso();
+var fin = new Date().getTime();
+
+var diferencia=(fin-inicio)/1000;
+document.getElementById("tiempoReaccion").innerHTML= diferencia +" s";
+}
+</script>
+</body>
+
+</html>

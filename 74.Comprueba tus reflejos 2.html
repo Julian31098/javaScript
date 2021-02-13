@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprueva tus reflejos</title>
+     <style type="text/css">
+      #forma{
+          width: 200px;
+          height: 200px;
+          background-color: red;
+          position: relative;
+          left:100px;
+          top: 100px;
+      }
+      .bold{
+          font-weight:bold;
+      }
+     </style>
+</head>
+   
+
+<body>
+<h1>Comprueba tus reflejos!</h1>
+<h2>Haz click en los círculos y retángulos tan rápido como puedas!</h2>
+<p>Tiempo de reacciòn:<span id="tiempoReaccion"></span></p>
+<div id="forma"></div>    
+
+
+<script type="text/javascript">
+ var inicio = new Date().getTime();
+
+function desaparecerFormar(){
+    document.getElementById("forma").style.display="none";
+}
+
+function obtenerColorAleatorio(){
+    var letters = '0123456789ABCDEF'.split('');
+    var color ="#";
+    for(var i=0;i<6;i++){
+        color+=letters[Math.round(Math.random() * 15)];
+    }
+    //color ="#01234f"
+    return color;
+}
+
+
+function aparecerForma(){
+     var top=Math.random()*400;//posicion de arriba
+     var left=Math.random()*400;//posicion de la izquierda
+     var width=(Math.random()*200)+100//anchura minima de 100 px
+     var color= obtenerColorAleatorio();//Llamamos la funcion obtener color aleatorio
+
+
+ if(Math.random()>0.5){
+    document.getElementById("forma").style.borderRadius="50%"//Convertir en un circulo
+ }else{
+    document.getElementById("forma").style.borderRadius="0%"//convertir un cuadrado
+ }
+
+    document.getElementById("forma").style.display="block";
+    document.getElementById("forma").style.top =top +"px";//para poner la posicion top
+    document.getElementById("forma").style.left = left +"px";//para poner la posicion left
+    document.getElementById("forma").style.width = width +"px";//para poner la anchura dela forma
+    document.getElementById("forma").style.height=width+"px";//para darle altura ala forma
+    document.getElementById("forma").style.backgroundColor=color;//obtener color aleatorio
+
+
+
+    inicio = new Date().getTime();
+}
+
+function aparecerFormaDespuesRetraso(){
+    setTimeout(aparecerForma,Math.random()*2000);
+}
+
+document.getElementById("forma").onclick =
+function(){
+desaparecerFormar();
+
+var fin = new Date().getTime();
+
+var diferencia=(fin-inicio)/1000;
+aparecerFormaDespuesRetraso();
+document.getElementById("tiempoReaccion").innerHTML= diferencia +" s";
+}
+</script>
+</body>
+
+</html>

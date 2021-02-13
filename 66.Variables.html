@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <input id="entradaUsuario" type="text" placeholder="Usuario" ><!--Elemento de entrada-->
+    <p id="texto">Inicia sesión</p>
+    <button id="mostrarMensaje">Login</button>
+</head>
+<body>
+    <script type="text/javascript">
+     var x=1;
+     var y=2;
+     var suma = x+y;//variable numerica
+     alert (suma);
+
+     document.getElementById("mostrarMensaje").onclick =
+     function(){
+      var entradaTexto="";//variable de texto
+      entradaTexto=document.getElementById("entradaUsuario").value;//para obtener el valor de la caja
+     document.getElementById("texto").innerHTML="Bienvenido"+ "  "+entradaTexto;
+     alert(entradaTexto);
+     }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+       var miArray = new Array();// Declaracion de un arreglo
+       miArray[0]="rojo";
+       miArray[1]="amarillo";
+       //Valores del arreglo
+       alert(miArray[0]);
+       alert(miArray[1]);
+       var tweets= ["Buenos dias!","Me encanta el helado"]//Otra forma de declarar los arreglos
+       alert(tweets[0]);
+       console.log(tweets);//imprimir el arreglo en la consola
+       console.log(tweets.length);//imprimir  la candidad de variables que hay en el arreglo
+       tweets.push("Vuelta al trabajo")// para agragar oto campo al arreglo
+       console.log(tweets);
+       alert(tweets[2]);
+       //tweets.splice(2,1);//para quitar lo elementos:la posicion e inicio de elementos a quitar, y el elementos a quitar
+       //alert(tweets)
+       tweets.splice(1,0,"Hola a todos!")//para agregar un elemento en una posicion
+       alert(tweets[1]);
+    
+   
+</script>
+</body>
+</html>

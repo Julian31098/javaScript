@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>¿Cuantos dedos tengo?</h1>
+    <input type="text" id=numeroDedos placeholder="Número">
+    <button id="miBoton">Comprovar</button>
+    <script type="text/javascript">
+     /*
+     var n=1;
+      while(n<=5)
+      {
+          alert(n)
+          n++;//el incremento se produce dentro de la instruccion 
+      }  
+    alert("Fin del While"+n);  
+    */
+    
+    document.getElementById("miBoton").onclick =
+    function(){
+    
+    var numeroDedos=document.getElementById("numeroDedos").value;
+    var aciertos=false;
+    var numeroIntentos=0;
+    
+
+ while(aciertos == false){
+    var numeroRamdon=Math.floor(Math.random()*6);
+    alert("El numero a adivinar es "+numeroRamdon);
+    
+    if(numeroDedos==numeroRamdon){
+        aciertos=true;
+        alert("Acerté! El número era "+numeroRamdon+". Me a costado "+numeroIntentos+" intentos.");
+    }else{
+    numeroIntentos++;
+    alert("numero de intentos "+numeroIntentos);
+       
+    }
+ }
+    
+
+    
+
+    }
+</script>
+</body>
+</html>
